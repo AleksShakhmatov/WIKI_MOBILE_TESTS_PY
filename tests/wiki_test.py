@@ -53,17 +53,17 @@ def test_search_wiki_appium():
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.label("owner", "AleksSH")
 @allure.story("Поиск")
-@allure.feature("Поиск в википедии текста 'Moto'")
+@allure.feature("Поиск в википедии текста 'Motorcycle'")
 def test_search_wiki_moto():
-    with step('Ввести "Moto" в поиске Википедии'):
+    with step('Ввести "Motorcycle" в поиске Википедии'):
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_skip_button')).click()
         browser.element((AppiumBy.ACCESSIBILITY_ID, "Search Wikipedia")).click()
-        browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/search_src_text")).type('Moto')
+        browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/search_src_text")).type('Motorcycle')
 
     with step('Проверяем наименование результата'):
         results = browser.all((AppiumBy.ID, 'org.wikipedia.alpha:id/page_list_item_title'))
         results.should(have.size_greater_than(0))
-        results.first.should(have.text('Moto'))
+        results.first.should(have.text('Motorcycle'))
 
     with step('Кликаем элемент'):
         browser.all((AppiumBy.ID, 'org.wikipedia.alpha:id/page_list_item_title')).first.click()
