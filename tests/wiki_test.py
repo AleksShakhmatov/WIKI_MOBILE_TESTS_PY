@@ -4,9 +4,11 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have
 
 
-@allure.story('Search')
-@allure.severity(allure.severity_level.NORMAL)
-@allure.tag('Mobile')
+@allure.tag("Mobile")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("owner", "AleksSH")
+@allure.story("Поиск")
+@allure.feature("Проверка страниц")
 def test_skip_pages():
     with allure.step('Проверка первой страницы'):
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).should(
@@ -27,9 +29,10 @@ def test_skip_pages():
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).should(have.text('Data & Privacy'))
 
 
-@allure.story('Search')
-@allure.severity(allure.severity_level.NORMAL)
-@allure.tag('Mobile')
+@allure.tag("Mobile")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("owner", "AleksSH")
+@allure.story("Поиск")
 @allure.feature('Поиск в википедии текста "Appium"')
 def test_search_wiki_appium():
     with step('Ввести "Appium" в поиске Википедии'):
@@ -46,9 +49,10 @@ def test_search_wiki_appium():
         browser.all((AppiumBy.ID, 'org.wikipedia.alpha:id/page_list_item_title')).first.click()
 
 
-@allure.story('Search')
-@allure.severity(allure.severity_level.NORMAL)
-@allure.tag('Mobile')
+@allure.tag("Mobile")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("owner", "AleksSH")
+@allure.story("Поиск")
 @allure.feature('Поиск в википедии текста "Moto"')
 def test_search_wiki_moto():
     with step('Ввести "Moto" в поиске Википедии'):
