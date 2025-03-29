@@ -33,7 +33,7 @@ def test_skip_pages():
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.label("owner", "AleksSH")
 @allure.story("Поиск")
-@allure.feature('Поиск в википедии текста "Appium"')
+@allure.feature("Поиск в википедии текста 'Appium'")
 def test_search_wiki_appium():
     with step('Ввести "Appium" в поиске Википедии'):
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_skip_button')).click()
