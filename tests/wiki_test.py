@@ -53,7 +53,7 @@ def test_search_wiki_appium():
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.label("owner", "AleksSH")
 @allure.story("Поиск")
-@allure.feature('Поиск в википедии текста "Moto"')
+@allure.feature("Поиск в википедии текста 'Moto'")
 def test_search_wiki_moto():
     with step('Ввести "Moto" в поиске Википедии'):
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_skip_button')).click()
